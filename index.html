@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أذكاري | أذكار الصباح والمساء</title>
+    <meta
+      name="description"
+      content="موقع أذكاري - ابدأ يومك بذكر الله واختمه به. أذكار الصباح والمساء بطريقة سهلة وتفاعلية مع عداد للتسبيح وحفظ التقدم."
+    />
+    <meta
+      name="keywords"
+      content="أذكار, أذكار الصباح, أذكار المساء, أذكاري, التسبيح, الذكر, حصن المسلم"
+    />
+
+    <!-- Open Graph للمشاركة -->
+    <meta property="og:title" content="أذكاري | أذكار الصباح والمساء" />
+    <meta property="og:description" content="ألا بذكر الله تطمئن القلوب - ابدأ يومك بذكر الله" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_AR" />
+
+    <!-- الخطوط العربية من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- أيقونة الموقع -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- ملفات CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- تطبيق أذكاري -->
+    <div class="app">
+      <!-- الهيدر (يتم بناؤه ديناميكيًا بواسطة JavaScript) -->
+      <header class="header" id="header"></header>
+
+      <!-- المحتوى الرئيسي (يتغير حسب الصفحة) -->
+      <main class="main" id="main"></main>
+
+      <!-- الفوتر -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <p class="footer-text font-amiri">أذكاري | صدقة جارية بإذن الله</p>
+          <p class="footer-verse">«أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ»</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ملفات JavaScript -->
+    <script src="azkar-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

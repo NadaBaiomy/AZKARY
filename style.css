@@ -1,0 +1,1227 @@
+/* ===== أذكاري - ملف التنسيقات ===== */
+
+/* المتغيرات اللونية - الوضع الفاتح */
+:root {
+  /* خلفية بيج فاتحة */
+  --bg: #f7f3ea;
+  --fg: #1f2d24;
+  --card: #fffdf7;
+  --card-fg: #1f2d24;
+
+  /* أخضر إسلامي داكن */
+  --primary: #1b5e20;
+  --primary-fg: #fffdf7;
+
+  /* بيج */
+  --secondary: #ece3cf;
+  --secondary-fg: #3e4a3a;
+  --muted: #6b7a6a;
+
+  /* أخضر فاتح */
+  --accent: #e8f0d9;
+  --accent-fg: #1b5e20;
+
+  /* حدود */
+  --border: #d9cfb8;
+
+  /* ذهبي */
+  --gold: #c9a14a;
+
+  /* أحجام */
+  --radius: 0.875rem;
+  --font-size-base: 20px;
+}
+
+/* الوضع الليلي */
+.dark {
+  --bg: #121a14;
+  --fg: #ece3cf;
+  --card: #1a241c;
+  --card-fg: #ece3cf;
+  --primary: #4a8a52;
+  --primary-fg: #121a14;
+  --secondary: #243029;
+  --secondary-fg: #ece3cf;
+  --muted: #9aaa9a;
+  --accent: #2e3d30;
+  --accent-fg: #c9a14a;
+  --border: #2e3d30;
+  --gold: #d9b65d;
+}
+
+/* إعادة الضبط */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* خط الأذكار القرآنية */
+.font-amiri {
+  font-family: "Amiri", serif;
+}
+
+/* الحاوية الرئيسية */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== الهيدر ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: rgba(247, 243, 234, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(217, 207, 184, 0.6);
+}
+
+.dark .header {
+  background-color: rgba(18, 26, 20, 0.85);
+}
+
+.header-inner {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* الشعار */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--primary-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.logo-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo-subtitle {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* أزرار التحكم */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (min-width: 640px) {
+  .controls {
+    gap: 8px;
+  }
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.icon-btn:hover {
+  background-color: var(--secondary);
+}
+
+.icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-btn.active {
+  background-color: var(--secondary);
+}
+
+/* مجموعة تكبير الخط */
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background-color: rgba(236, 227, 207, 0.6);
+  padding: 2px;
+  border-radius: 8px;
+}
+
+.dark .font-controls {
+  background-color: rgba(36, 48, 41, 0.6);
+}
+
+.font-controls .icon-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.font-controls .icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.font-size-display {
+  padding: 0 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  min-width: 24px;
+  text-align: center;
+}
+
+/* ===== المحتوى الرئيسي ===== */
+.main {
+  flex: 1;
+}
+
+/* الزخرفة الإسلامية */
+.pattern {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(27, 94, 32, 0.06) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}
+
+.dark .pattern {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(201, 161, 74, 0.08) 1px,
+    transparent 0
+  );
+}
+
+/* ===== الصفحة الرئيسية ===== */
+.home {
+  padding: 40px 16px 48px;
+}
+
+.home-hero {
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+@media (min-width: 640px) {
+  .home-hero {
+    padding-top: 64px;
+  }
+}
+
+.hero-icon {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .hero-icon {
+    width: 112px;
+    height: 112px;
+  }
+}
+
+.hero-icon-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(27, 94, 32, 0.2), rgba(201, 161, 74, 0.2));
+  filter: blur(20px);
+}
+
+.hero-icon-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid rgba(27, 94, 32, 0.2);
+  background-color: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hero-icon-circle svg {
+  width: 48px;
+  height: 48px;
+  color: var(--primary);
+}
+
+@media (min-width: 640px) {
+  .hero-icon-circle svg {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.home-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+@media (min-width: 640px) {
+  .home-title {
+    font-size: 48px;
+  }
+}
+
+.home-verse {
+  font-family: "Amiri", serif;
+  font-size: 24px;
+  color: var(--fg);
+  margin-bottom: 4px;
+}
+
+@media (min-width: 640px) {
+  .home-verse {
+    font-size: 30px;
+  }
+}
+
+.home-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 28rem;
+}
+
+@media (min-width: 640px) {
+  .home-subtitle {
+    font-size: 16px;
+  }
+}
+
+/* بطاقتا الصباح والمساء */
+.cards-grid {
+  max-width: 768px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0 16px 48px;
+}
+
+@media (min-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.home-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background-color: var(--card);
+  border: 2px solid rgba(27, 94, 32, 0.2);
+  border-radius: 24px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.home-card.evening {
+  border-color: rgba(201, 161, 74, 0.3);
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.home-card.evening:hover {
+  border-color: var(--gold);
+}
+
+@media (min-width: 640px) {
+  .home-card {
+    padding: 32px;
+  }
+}
+
+.home-card-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27, 94, 32, 0.05), rgba(201, 161, 74, 0.05));
+  opacity: 0.5;
+}
+
+.card-icon {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), rgba(27, 94, 32, 0.7));
+  color: var(--primary-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s;
+}
+
+.home-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.home-card.evening .card-icon {
+  background: linear-gradient(135deg, var(--gold), rgba(201, 161, 74, 0.7));
+  color: var(--card);
+}
+
+@media (min-width: 640px) {
+  .card-icon {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+.card-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 640px) {
+  .card-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.card-title {
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+@media (min-width: 640px) {
+  .card-title {
+    font-size: 30px;
+  }
+}
+
+.card-subtitle {
+  position: relative;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+@media (min-width: 640px) {
+  .card-subtitle {
+    font-size: 16px;
+  }
+}
+
+/* شريط تقدم البطاقة */
+.card-progress {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.progress-bar-bg {
+  height: 6px;
+  width: 100%;
+  border-radius: 999px;
+  background-color: var(--secondary);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--primary);
+  transition: width 0.3s;
+}
+
+.home-card.evening .progress-bar-fill {
+  background-color: var(--gold);
+}
+
+.progress-text {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.card-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: var(--primary-fg);
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s;
+}
+
+.home-card.evening .card-btn {
+  background-color: var(--gold);
+  color: var(--card);
+}
+
+.card-btn:hover {
+  background-color: rgba(27, 94, 32, 0.9);
+}
+
+.home-card.evening .card-btn:hover {
+  background-color: rgba(201, 161, 74, 0.9);
+}
+
+@media (min-width: 640px) {
+  .card-btn {
+    font-size: 16px;
+  }
+}
+
+.card-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== صفحة الأذكار ===== */
+.azkar-view {
+  padding: 24px 16px 48px;
+}
+
+.azkar-container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-bottom: 16px;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: var(--primary);
+}
+
+.back-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.azkar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.azkar-header-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--primary-fg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.evening-icon {
+  background-color: var(--gold);
+  color: var(--card);
+}
+
+.azkar-header-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.azkar-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+@media (min-width: 640px) {
+  .azkar-title {
+    font-size: 30px;
+  }
+}
+
+.azkar-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* شريط التقدم العام */
+.progress-summary {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.progress-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.progress-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.progress-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.progress-value.morning {
+  color: var(--primary);
+}
+
+.progress-value.evening {
+  color: var(--gold);
+}
+
+.progress-bar-large {
+  height: 10px;
+  width: 100%;
+  border-radius: 999px;
+  background-color: var(--secondary);
+  overflow: hidden;
+}
+
+.progress-bar-large .progress-bar-fill {
+  transition: width 0.5s;
+}
+
+.progress-bar-fill.morning {
+  background: linear-gradient(to right, var(--primary), rgba(27, 94, 32, 0.7));
+}
+
+.progress-bar-fill.evening {
+  background: linear-gradient(to right, var(--gold), rgba(201, 161, 74, 0.7));
+}
+
+/* رسالة الإكمال الكلي */
+.all-complete {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(27, 94, 32, 0.08);
+  border: 2px solid rgba(27, 94, 32, 0.3);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.all-complete-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  color: var(--primary);
+}
+
+.all-complete-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.all-complete-text {
+  font-family: "Amiri", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.all-complete-sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* قائمة الأذكار */
+.azkar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 48px;
+}
+
+/* بطاقة الذكر */
+.azkar-card {
+  position: relative;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.azkar-card:not(.completed):hover {
+  border-color: rgba(27, 94, 32, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.azkar-card.completed {
+  border-color: rgba(27, 94, 32, 0.3);
+  opacity: 0.75;
+}
+
+@media (min-width: 640px) {
+  .azkar-card {
+    padding: 24px;
+  }
+}
+
+.card-side-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 6px;
+  background: linear-gradient(to bottom, rgba(27, 94, 32, 0.6), rgba(201, 161, 74, 0.6));
+}
+
+.azkar-card.completed .card-side-bar {
+  background-color: var(--primary);
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-number-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.number-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background-color: var(--secondary);
+  color: var(--secondary-fg);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.number-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: var(--secondary);
+  color: var(--fg);
+}
+
+.copy-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.azkar-text {
+  font-family: "Amiri", serif;
+  margin: 16px 0 12px;
+  color: var(--fg);
+  line-height: 2;
+  text-align: right;
+  direction: rtl;
+}
+
+.azkar-virtue {
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: rgba(236, 227, 207, 0.5);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.dark .azkar-virtue {
+  background-color: rgba(36, 48, 41, 0.5);
+}
+
+/* العداد */
+.counter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.counter-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.counter-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+  transition: transform 0.2s;
+}
+
+.counter-value.pulse {
+  transform: scale(1.2);
+}
+
+/* شريط تقدم الذكر */
+.card-progress-bar {
+  height: 8px;
+  width: 100%;
+  border-radius: 999px;
+  background-color: var(--secondary);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.card-progress-bar .progress-bar-fill {
+  background: linear-gradient(to right, var(--primary), rgba(27, 94, 32, 0.7));
+  transition: width 0.3s;
+}
+
+/* زر التسبيح */
+.tasbeeh-btn {
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--primary);
+  color: var(--primary-fg);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: all 0.1s;
+}
+
+.tasbeeh-btn:hover {
+  background-color: rgba(27, 94, 32, 0.9);
+}
+
+.tasbeeh-btn:active {
+  transform: scale(0.98);
+}
+
+.tasbeeh-text {
+  font-size: 20px;
+}
+
+.tasbeeh-hint {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: rgba(255, 253, 247, 0.15);
+  font-size: 14px;
+}
+
+.dark .tasbeeh-hint {
+  background-color: rgba(18, 26, 20, 0.15);
+}
+
+.tasbeeh-help {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* رسالة إكمال الذكر */
+.complete-message {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 16px;
+  border-radius: 12px;
+  background-color: rgba(27, 94, 32, 0.08);
+  border: 1px solid rgba(27, 94, 32, 0.2);
+  text-align: center;
+}
+
+.complete-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--primary-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.complete-icon-circle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.complete-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.complete-sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== صفحة About ===== */
+.about-view {
+  padding: 32px 16px;
+}
+
+.about-container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), rgba(27, 94, 32, 0.7));
+  color: var(--primary-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.about-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.about-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.about-subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.about-section {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.about-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.about-section-title svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-verse {
+  font-family: "Amiri", serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.about-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--fg);
+}
+
+.about-features {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .about-features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: rgba(236, 227, 207, 0.5);
+  font-size: 14px;
+}
+
+.dark .about-feature {
+  background-color: rgba(36, 48, 41, 0.5);
+}
+
+.about-feature-check {
+  color: var(--primary);
+}
+
+.about-sadaqa {
+  background-color: rgba(27, 94, 32, 0.08);
+  border: 2px solid rgba(27, 94, 32, 0.3);
+  text-align: center;
+}
+
+.about-sadaqa-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 12px;
+  color: var(--primary);
+}
+
+.about-sadaqa-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.about-sadaqa-title {
+  font-family: "Amiri", serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.about-back-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: var(--primary-fg);
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s;
+}
+
+.about-back-btn:hover {
+  background-color: rgba(27, 94, 32, 0.9);
+}
+
+/* ===== الفوتر ===== */
+.footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(217, 207, 184, 0.6);
+  background-color: rgba(255, 253, 247, 0.5);
+  backdrop-filter: blur(8px);
+  padding: 24px 16px;
+}
+
+.dark .footer {
+  background-color: rgba(26, 36, 28, 0.5);
+  border-top-color: rgba(46, 61, 48, 0.6);
+}
+
+.footer-inner {
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: "Amiri", serif;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.footer-verse {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== إخفاء/إظهار العناصر ===== */
+.hidden {
+  display: none !important;
+}
+
+/* شريط التمرير */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary);
+}
+
+/* تحسينات للوصول */
+.icon-btn:focus-visible,
+.tasbeeh-btn:focus-visible,
+.home-card:focus-visible,
+.copy-btn:focus-visible,
+.back-btn:focus-visible,
+.about-back-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
